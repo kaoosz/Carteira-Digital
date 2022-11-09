@@ -32,7 +32,7 @@ class UserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
             ],
-            'user created success');
+            'user created');
 
 
         }catch(Exception $e){
@@ -44,7 +44,12 @@ class UserController extends Controller
     {
         try{
             $user = User::findOrFail($id);
-            return $user->name;
+
+            return $this->success([
+                'name' => $user->name,
+            ],
+            'user deleted');
+
 
         }catch(Exception $e){
             return $this->error('failed delete user',201);
