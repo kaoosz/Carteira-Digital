@@ -46,7 +46,7 @@ IMAGE AQUi.
 
 > `http://127.0.0.1:8000/api/user`
 
-**Mostra todas as carteiras com relacionamento dono user_id e wallet transactions, todas as transações feitas** CORIGIR O PROTUGUÊS
+**Mostra todas as carteiras com relacionamento dono user_id e wallet transactions, todas as transações feitas**
 > `http://127.0.0.1:8000/api/wallet`
 
 **Mostra as transaçoes apenas e a carteira que fez a transação**
