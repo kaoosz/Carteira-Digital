@@ -21,9 +21,11 @@ class TransactionController extends Controller
         return TransactionResource::collection(Transaction::all());
     }
 
-    public function store(User $user ,Wallet $wallet,TransactionRequest $request)
+    public function store($id,TransactionRequest $request)
     {
         try{
+
+            $wallet = Wallet::findOrFail($id);
 
             $wallet->transaction()->create([
                 'name' => $request->name,
@@ -33,6 +35,7 @@ class TransactionController extends Controller
                 'name' => $request->name,
             ],
             'transaction created');
+            
         }catch(Exception $e)
         {
             return $this->error('failed create transaction',201);

@@ -24,8 +24,6 @@ php artisan key:generate
 ```
 
 
-samcrum?
-
 # Endpoints
 
 Primeiro 'cadastrese' para receber 1 token de acesso.

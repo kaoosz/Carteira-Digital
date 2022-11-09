@@ -18,13 +18,8 @@ Route::group(['middleware' => ['auth:sanctum']],function(){
 
     Route::apiResource('user',UserController::class)->only('index','destroy');
     Route::get('wallet',[WalletController::class,'index']);
-
     Route::apiResource('user.wallet',WalletController::class)->only('index','store');
-
     Route::get('transaction',[TransactionController::class,'index']);
     Route::apiResource('wallet.transaction',TransactionController::class)->only('index','store');
-    
-    Route::post('logout',[AuthController::class,'logout']);
 
 });
-

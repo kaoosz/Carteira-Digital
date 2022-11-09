@@ -20,11 +20,11 @@ class WalletController extends Controller
         return WalletResource::collection(Wallet::all());
     }
 
-    public function store(?User $user)
+    
+    public function store($id)
     {
-
         try{
-            $user->findOrFail($user->id);
+            $user = User::findOrFail($id);
 
             $user->wallet()->create([
                $user->id
@@ -34,10 +34,6 @@ class WalletController extends Controller
                 'user id' => $user->id,
             ],
             'wallet created');
-
-        }catch(NotFoundHttpException $e)
-        { 
-            return $e->getMessage();
 
         }catch(Exception $e)
         {
